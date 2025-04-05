@@ -13,6 +13,10 @@ app.use(cors())
 app.use("/users", userRouter)
 app.use("/files", fileUploadRouter)
 
+app.get("/", (req, res) => {
+    res.send("welcome to server")
+})
+
 app.listen(PORT, () => {
     DBConnection()
     console.log(`Server is running on port ${PORT}`)
